@@ -1,8 +1,8 @@
-FROM golang:1.16-alpine as builder
+FROM golang:1.17.0-alpine3.14 as builder
 
 WORKDIR /go/src/app
 COPY . .
-RUN go build -o hello.go
+RUN go build hello.go
 
 FROM hello-world
 
